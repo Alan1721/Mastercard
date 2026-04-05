@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulta de BINs Mastercard</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="background-orb orb-1"></div>
+  <div class="background-orb orb-2"></div>
+
+  <div class="page">
+    <header class="hero">
+      <div class="hero-top">
+        <div class="brand-block">
+          <img src="./nuvei-logo.png" alt="Nuvei" class="logo" />
+          <div class="hero-copy">
+            <span class="badge">Internal Tool</span>
+            <h1>Consulta de BINs Mastercard</h1>
+            <p class="subtitle">
+              Plataforma interna para identificación de banco emisor y análisis de información asociada al BIN
+            </p>
+            <p class="hero-meta">Mastercard BIN Lookup Interface</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="panel panel-search">
+        <div class="panel-header">
+          <h2>Consulta</h2>
+          <p>Ingrese un BIN o account range para consultar la información asociada.</p>
+        </div>
+
+        <label for="accountRange">BIN / Account Range</label>
+        <div class="search-row">
+          <input
+            type="text"
+            id="accountRange"
+            placeholder="Ej: 585240844"
+            maxlength="11"
+          />
+          <button id="consultarBtn">Consultar</button>
+        </div>
+      </section>
+
+      <section class="panel panel-status">
+        <div class="panel-header">
+          <h2>Estado</h2>
+        </div>
+        <div id="status">Esperando consulta...</div>
+      </section>
+
+      <section class="panel panel-featured">
+        <div class="panel-header">
+          <h2>Resultado interpretado</h2>
+          <p>Vista orientada a negocio para lectura rápida.</p>
+        </div>
+        <div id="formattedResponse" class="formatted-empty">
+          Aquí aparecerá la información procesada...
+        </div>
+      </section>
+
+      <section class="panel panel-raw">
+        <div class="panel-header">
+          <h2>Respuesta cruda de la API</h2>
+          <p>Salida técnica completa devuelta por el backend.</p>
+        </div>
+        <pre id="rawResponse">Aquí aparecerá la respuesta JSON completa...</pre>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-line"></div>
+      <span id="footerText"></span>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
